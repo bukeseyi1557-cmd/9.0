@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="false"
+        android:label="小伙伴桌宠"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="false">
+
+        <activity
+            android:name=".AiSettingsActivity"
+            android:exported="false"
+            android:label="独立 AI 设置" />
+        <activity
+            android:name=".DailyLifeActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"
+            android:label="日常陪伴小屋" />
+        <activity
+            android:name=".FriendCenterActivity"
+            android:exported="false"
+            android:label="朋友档案" />
+        <activity
+            android:name=".ChatActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"
+            android:label="和小伙伴聊天" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".PetService"
+            android:enabled="true"
+            android:exported="false" />
+    </application>
+</manifest>
