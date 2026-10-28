@@ -61,7 +61,7 @@ class ChatActivity : Activity() {
             gravity = Gravity.CENTER_VERTICAL
         }
         header.addView(TextView(this).apply {
-            text = "和${PetStateStore.nickname(this)}聊天 ✨"
+            text = "和${PetStateStore.nickname(this@ChatActivity)}聊天 ✨"
             textSize = 22f
             typeface = Typeface.DEFAULT_BOLD
             setTextColor(Color.rgb(68, 53, 86))

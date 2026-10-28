@@ -61,3 +61,9 @@
 上传源码到 GitHub 仓库后，运行 `Build Android APK` 工作流，成功后从 Artifacts 下载 APK。
 
 当前源码版本：`9.0.0`（versionCode 9）。
+
+## 9.1 编译修复
+
+- 修复 `ChatActivity.kt` 第 64 行昵称标题的 Kotlin 接收者类型错误：在 `TextView.apply {}` 中显式使用 `this@ChatActivity`，避免将 `TextView` 错误传给需要 `Context` 的 `PetStateStore.nickname(...)`。
+- 此次修复针对 GitHub Actions 日志中报告的 `actual type is 'android.widget.TextView', but 'android.content.Context' was expected`。
+- 当前交付的是源码修复包；在 GitHub Actions 重新运行前，尚不能宣称完整 APK 构建已成功。
